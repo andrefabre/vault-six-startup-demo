@@ -31,13 +31,39 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    "jazzmin",
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    "crispy_forms",
+    "crispy_bootstrap4",
+    "securemyassets"
 ]
+
+CRISPY_TEMPLATE_PACK = "bootstrap4"
+CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap4"
+
+# Media files configuration
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+# Authentication settings
+LOGIN_REDIRECT_URL = "dashboard"'
+LOGIN_REDIRECT_URL = "home"
+LOGIN_URL = "login"
+
+# Jazzmin settings
+JAZZMIN_SETTINGS = {
+    "site_title": "Digital Asset Security Admin",
+    "site_header": "Digital Asset Security",
+    "welcome_sign": "Welcome to the Digital Asset Security Admin",
+    "copyright": "Vault Six Data Security Solutions © 2025",
+    "show_sidebar": True,
+    "navigation_expanded": True,
+}
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
